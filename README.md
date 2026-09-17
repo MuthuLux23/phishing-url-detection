@@ -2,8 +2,7 @@
 
 ##  Project Name : Phishing URL Detection Using Machine Learning
 ##  College Name : EGS Pillay Engineering College
-##  Team members : Muthulakshmi A 
-##                 Shinas begum M
+##  Team members : Muthulakshmi A , Shinas begum M
 ##  Problem Statement
 
 Phishing websites use malicious URLs to trick users into visiting fake websites and revealing sensitive information such as passwords, banking details, and personal data.
