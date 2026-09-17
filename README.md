@@ -24,7 +24,7 @@ Feature Conversion
         ↓
 Random Forest Classifier
         ↓
-Classification
+   Classification
    ↙             ↘
 Legitimate      Phishing
         ↓
