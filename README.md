@@ -1,16 +1,16 @@
-# 🔐 Phishing URL Detection Using Machine Learning
+#  Phishing URL Detection Using Machine Learning
 
-## 📌 Project Name
+##  Project Name
 
 **Phishing URL Detection Using Machine Learning**
 
-## ❗ Problem Statement
+##  Problem Statement
 
 Phishing websites use malicious URLs to trick users into visiting fake websites and revealing sensitive information such as passwords, banking details, and personal data.
 
 The objective of this project is to develop a machine learning-based system that analyzes URL characteristics and classifies a given URL as **Legitimate** or **Phishing**.
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```text
 User Input (URL)
@@ -30,7 +30,7 @@ Legitimate      Phishing
 Streamlit Deployment
 ```
 
-## 🤖 Model Used
+##  Model Used
 
 ### Random Forest Classifier
 
@@ -38,7 +38,7 @@ Random Forest is an ensemble machine learning algorithm that combines multiple d
 
 In this project, the model learns patterns from URL-based features and predicts whether the input URL is **Legitimate** or **Phishing**.
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * **Python** – Programming
 * **Pandas** – Data processing
@@ -48,7 +48,7 @@ In this project, the model learns patterns from URL-based features and predicts 
 * **Streamlit** – Web application deployment
 * **Pickle** – Saving and loading the trained model
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 Phishing-URL-Detection/
@@ -69,7 +69,7 @@ Phishing-URL-Detection/
 | `requirements.txt` | Required Python libraries       |
 | `README.md`        | Project documentation           |
 
-## ⚙️ How It Works
+##  How It Works
 
 1. **User enters a URL** into the Streamlit application.
 2. The system performs **URL preprocessing**.
@@ -78,11 +78,11 @@ Phishing-URL-Detection/
 5. The trained **Random Forest Classifier** analyzes the features.
 6. The system classifies the URL as:
 
-   * ✅ **Legitimate**
-   * ⚠️ **Phishing**
+   * **Legitimate**
+   * **Phishing**
 7. The prediction is displayed through the **Streamlit web interface**.
 
-## 🔮 Future Scope
+##  Future Scope
 
 * Integrate real-time website and URL reputation checking.
 * Add external threat intelligence APIs.
