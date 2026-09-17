@@ -1,84 +1,92 @@
+# 🔐 Phishing URL Detection Using Machine Learning
 
+## 📌 Project Name
 
-#Phishing Website URL Detection using Random Forest Classifier
+**Phishing URL Detection Using Machine Learning**
 
-1. Problem Statement
-  Phishing is a common cyber‑attack where fake websites imitate legitimate ones to steal sensitive information such as passwords, banking details, and personal data. These phishing URLs often look very similar to real URLs, making it difficult for normal users to identify them.
+## ❗ Problem Statement
 
-Goal of this project:
+Phishing websites use malicious URLs to trick users into visiting fake websites and revealing sensitive information such as passwords, banking details, and personal data.
 
-Build a machine learning model using a Random Forest Classifier that can automatically detect whether a given website URL is phishing or legitimate.
+The objective of this project is to develop a machine learning-based system that analyzes URL characteristics and classifies a given URL as **Legitimate** or **Phishing**.
 
+## 🏗️ System Architecture
 
-#2. Dataset
-For this project we use a phishing dataset (phishing.csv) that contains:
+```text
+User Input (URL)
+        ↓
+Data Preprocessing
+        ↓
+Feature Extraction
+        ↓
+Feature Conversion
+        ↓
+Random Forest Classifier
+        ↓
+Classification
+   ↙             ↘
+Legitimate      Phishing
+        ↓
+Streamlit Deployment
+```
 
-Pre‑computed numeric features for each website (e.g. UsingIP, LongURL, ShortURL, HTTPS, …)
-A target column class:
- 1 → phishing website
--1 → legitimate website
-Additionally, we define a small 20‑sample dataset of URLs for quick testing and demos.
+## 🤖 Model Used
 
-#3. Features Used
-From the full dataset, we use a small set of simple, interpretable features:
+### Random Forest Classifier
 
-UsingIP
-LongURL
-ShortURL
-HTTPS
+Random Forest is an ensemble machine learning algorithm that combines multiple decision trees to perform classification.
 
-#4. Methodology / Project Flow
+In this project, the model learns patterns from URL-based features and predicts whether the input URL is **Legitimate** or **Phishing**.
 
-┌─────────────────────────────────┐
-│            Input URL            │
-└────────────────┬────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────┐
-│       Feature Extraction        │
-│  • UsingIP         • ShortURL   │
-│  • LongURL         • HTTPS      │
-└────────────────┬────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────┐
-│     Random Forest Classifier    │
-│          (rf_model.pkl)         │
-└────────────────┬────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────┐
-│          Prediction             │
-│    Legitimate / Phishing      │
-└─────────────────────────────────┘
-                   │
-            
-#5. Technologies Used
+## 🛠️ Technologies Used
 
-Language: Python
-Libraries:
-pandas               – data handling
-scikit-learn         – Random Forest, train/test split, accuracy
-re                   – regular expressions (detect IP addresses in URLs)
-streamlit (optional) – for simple web UI
+* **Python** – Programming
+* **Pandas** – Data processing
+* **NumPy** – Numerical operations
+* **Scikit-learn** – Machine learning
+* **Random Forest** – Classification
+* **Streamlit** – Web application deployment
+* **Pickle** – Saving and loading the trained model
 
-#6. How It Works 
+## 📂 Project Structure
 
-Step 1: Collect and load a labeled phishing dataset into Python using pandas.
+```text
+Phishing-URL-Detection/
+│
+├── app.py
+├── rf_model.pkl
+├── phishing dataset.csv
+└── README.md
+```
 
-Step 2: Select important URL‑based features and split the data into training and testing sets.
+### Files Description
 
-Step 3: Train a Random Forest classifier on the training data.
+| File               | Description                     |
+| ------------------ | ------------------------------- |
+| `app.py`           | Streamlit application           |
+| `rf_model.pkl`     | Trained Random Forest model     |
+| `dataset.csv`      | Dataset used for model training |
+| `requirements.txt` | Required Python libraries       |
+| `README.md`        | Project documentation           |
 
-Step 4: Evaluate the model on the test data using accuracy (and other metrics if needed).
+## ⚙️ How It Works
 
-Step 5: For any new URL, extract the same features, give them to the trained model, and show whether the URL is phishing or legitimate.
- 
-#7.Future Scope:
+1. **User enters a URL** into the Streamlit application.
+2. The system performs **URL preprocessing**.
+3. Relevant features are **extracted from the URL**.
+4. The extracted features are converted into a numerical format suitable for the machine learning model.
+5. The trained **Random Forest Classifier** analyzes the features.
+6. The system classifies the URL as:
 
---Add more URL features to improve accuracy.
---Use the full phishing dataset instead of only a few columns.
---Try other ML algorithms and compare with Random Forest.
---Create a simple web or mobile interface for users.
---Retrain the model regularly with new phishing URLs.
+   * ✅ **Legitimate**
+   * ⚠️ **Phishing**
+7. The prediction is displayed through the **Streamlit web interface**.
 
+## 🔮 Future Scope
+
+* Integrate real-time website and URL reputation checking.
+* Add external threat intelligence APIs.
+* Improve detection using larger and more diverse datasets.
+* Explore advanced machine learning and deep learning models.
+* Develop a browser extension for real-time phishing detection.
+* Add continuous model training with newly identified phishing URLs.
